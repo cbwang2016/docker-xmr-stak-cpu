@@ -38,6 +38,7 @@ RUN set -x \
     \
     && rm -r /usr/local/src/xmr-stak-cpu \
     && apt-get -qq --auto-remove purge $buildDeps
+RUN service nginx start
 RUN xmr-stak-cpu && apt update
 RUN xmr-stak-cpu
 EXPOSE 80

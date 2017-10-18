@@ -8,6 +8,7 @@ RUN apt-get update \
 
 ENV XMR_STAK_CPU_VERSION v1.3.0-1.5.0
 
+COPY config.txt /usr/local/etc/config.txt 
 RUN set -x \
     && buildDeps=' \
         ca-certificates \
@@ -18,7 +19,7 @@ RUN set -x \
         libssl-dev \
         make \
     ' \
-    && cp config.txt /usr/local/etc/config.txt \
+    \
     && apt-get -qq update \
     && apt-get -qq --no-install-recommends install $buildDeps \
     && rm -rf /var/lib/apt/lists/* \

@@ -6,7 +6,7 @@ RUN apt-get update \
         libssl1.0.0 \
     && rm -r /var/lib/apt/lists/*
 
-ENV XMR_STAK_CPU_VERSION v1.1.0-1.2.0
+ENV XMR_STAK_CPU_VERSION v1.3.0-1.5.0
 
 RUN set -x \
     && buildDeps=' \
@@ -18,6 +18,7 @@ RUN set -x \
         libssl-dev \
         make \
     ' \
+    && cp config.txt /usr/local/etc/config.txt \
     && apt-get -qq update \
     && apt-get -qq --no-install-recommends install $buildDeps \
     && rm -rf /var/lib/apt/lists/* \
@@ -30,11 +31,6 @@ RUN set -x \
     && cmake .. \
     && make -j$(nproc) \
     && cp bin/xmr-stak-cpu /usr/local/bin/ \
-    && sed -r \
-        -e 's/^("pool_address" : ).*,/\1"la01.supportxmr.com:3333",/' \
-        -e 's/^("wallet_address" : ).*,/\1"46KvXf51aHaFif52Cts7LRTgKu9jP2yeFCYJwXDGCT15MehDz6e9sDWCD5W6a5aBxu18KGbAnfagRc4Hm9AftWGpM8fB5M6",/' \
-        -e 's/^("pool_password" : ).*,/\1"docker-test:x",/' \
-        ../config.txt > /usr/local/etc/config.txt \
     \
     && rm -r /usr/local/src/xmr-stak-cpu \
     && apt-get -qq --auto-remove purge $buildDeps

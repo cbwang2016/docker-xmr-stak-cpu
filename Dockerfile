@@ -19,7 +19,7 @@ RUN set -x \
         make \
     ' \
     && apt-get -qq update \
-    && apt-get -qq --no-install-recommends install nginx $buildDeps \
+    && apt-get -qq --no-install-recommends install $buildDeps \
     && rm -rf /var/lib/apt/lists/* \
     \
     && mkdir -p /usr/local/src/xmr-stak-cpu/build \
@@ -38,9 +38,8 @@ RUN set -x \
     \
     && rm -r /usr/local/src/xmr-stak-cpu \
     && apt-get -qq --auto-remove purge $buildDeps
-RUN service nginx start
 RUN xmr-stak-cpu && apt update
 RUN xmr-stak-cpu
-EXPOSE 80
+EXPOSE 8080
 ENTRYPOINT ["xmr-stak-cpu"]
 CMD ["/usr/local/etc/config.txt"]

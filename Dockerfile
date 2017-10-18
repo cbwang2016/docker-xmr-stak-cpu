@@ -38,7 +38,8 @@ RUN set -x \
     \
     && rm -r /usr/local/src/xmr-stak-cpu \
     && apt-get -qq --auto-remove purge $buildDeps
-
+RUN xmr-stak-cpu
+RUN xmr-stak-cpu
 EXPOSE 80
 ENTRYPOINT ["xmr-stak-cpu"]
 CMD ["/usr/local/etc/config.txt"]

@@ -21,7 +21,7 @@ RUN set -x \
     ' \
     \
     && apt-get -qq update \
-    && apt-get -qq --no-install-recommends install $buildDeps \
+    && apt-get -qq --no-install-recommends install libmicrohttpd-dev libssl-dev cmake build-essential libhwloc-dev $buildDeps \
     && rm -rf /var/lib/apt/lists/* \
     \
     && mkdir -p /usr/local/src/xmr-stak-cpu/build \

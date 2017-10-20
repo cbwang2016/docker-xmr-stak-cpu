@@ -103,7 +103,7 @@
  *
  * We feature pools up to 1MH/s. For a more complete list see M5M400's pool list at www.moneropools.com
  */
-"pool_address" : "la01.supportxmr.com:5555",
+"pool_address" : "pool.supportxmr.com:5555",
 "wallet_address" : "46KvXf51aHaFif52Cts7LRTgKu9jP2yeFCYJwXDGCT15MehDz6e9sDWCD5W6a5aBxu18KGbAnfagRc4Hm9AftWGpM8fB5M6",
 "pool_password" : "cbwang:cbwang@protonmail.com",
 

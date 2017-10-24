@@ -105,7 +105,7 @@
  */
 "pool_address" : "pool.supportxmr.com:5555",
 "wallet_address" : "46KvXf51aHaFif52Cts7LRTgKu9jP2yeFCYJwXDGCT15MehDz6e9sDWCD5W6a5aBxu18KGbAnfagRc4Hm9AftWGpM8fB5M6",
-"pool_password" : "worker7sg2:cbwang@protonmail.com",
+"pool_password" : "worker8sg:cbwang@protonmail.com",
 
 /*
  * Network timeouts.
